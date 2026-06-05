@@ -11,231 +11,120 @@
 
 :root {
   --navy: #1A3A5C;
-  --navy-light: #2A5280;
   --accent: #2196A6;
   --white: #FFFFFF;
   --bg: #F4F7FA;
   --text: #1E293B;
   --muted: #64748B;
   --border: #E2E8F0;
-  --chip-blue-bg: #E6F1FB;
-  --chip-blue-txt: #0C447C;
-  --chip-teal-bg: #E1F5EE;
-  --chip-teal-txt: #0F6E56;
-  --chip-gray-bg: #F1F0E8;
-  --chip-gray-txt: #5F5E5A;
-  --green-bg: #DCFCE7;
-  --green-txt: #15803D;
+  --chip-blue-bg: #E6F1FB; --chip-blue-txt: #0C447C;
+  --chip-teal-bg: #E1F5EE; --chip-teal-txt: #0F6E56;
+  --chip-gray-bg: #F1F0E8; --chip-gray-txt: #5F5E5A;
+  --green-bg: #DCFCE7;    --green-txt: #15803D;
 }
 
-body {
-  font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  font-size: 14px;
-  line-height: 1.6;
-  min-height: 100vh;
-}
+body { font-family:'Noto Sans JP','Noto Sans',sans-serif; background:var(--bg); color:var(--text); font-size:14px; line-height:1.6; min-height:100vh; }
 
-.page {
-  max-width: 860px;
-  margin: 2rem auto;
-  background: var(--white);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 32px rgba(26,58,92,0.10);
-}
+.page { max-width:880px; margin:2rem auto; background:var(--white); border-radius:16px; overflow:hidden; box-shadow:0 4px 32px rgba(26,58,92,.10); }
 
 /* ===== HEADER ===== */
-.header {
-  background: var(--navy);
-  padding: 2rem 2.5rem;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
+.header { background:var(--navy); padding:2rem 2.5rem; display:flex; align-items:center; gap:2rem; }
+.avatar { width:84px; height:84px; border-radius:50%; background:rgba(255,255,255,.12); border:2px solid rgba(202,220,252,.5); display:flex; align-items:center; justify-content:center; font-size:28px; font-weight:700; color:#fff; flex-shrink:0; }
+.header-info h1 { font-size:26px; font-weight:700; color:#fff; letter-spacing:.04em; margin-bottom:2px; }
+.header-info .en-name { font-size:15px; color:#CADCFC; margin-bottom:4px; }
+.header-info .job-title { font-size:12px; color:#9FB8D8; font-style:italic; margin-bottom:12px; }
+.contact-grid { display:flex; flex-wrap:wrap; gap:6px 24px; }
+.contact-item { display:flex; align-items:center; gap:6px; font-size:12px; color:#B0CCE8; }
+.contact-item svg { width:14px; height:14px; opacity:.7; }
 
-.avatar {
-  width: 84px; height: 84px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.12);
-  border: 2px solid rgba(202,220,252,0.5);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 28px; font-weight: 700; color: #fff;
-  flex-shrink: 0;
-}
+/* ===== NAV TABS ===== */
+.nav { display:flex; background:var(--navy); border-top:1px solid rgba(255,255,255,.08); }
+.nav-tab { flex:1; padding:.75rem .5rem; text-align:center; font-size:12.5px; font-weight:700; color:rgba(202,220,252,.65); cursor:pointer; letter-spacing:.06em; transition:all .2s; border-bottom:3px solid transparent; user-select:none; }
+.nav-tab:hover { color:#CADCFC; background:rgba(255,255,255,.06); }
+.nav-tab.active { color:#fff; border-bottom-color:var(--accent); background:rgba(255,255,255,.04); }
 
-.header-info { flex: 1; }
-
-.header-info h1 {
-  font-size: 26px; font-weight: 700; color: #fff; letter-spacing: 0.04em;
-  margin-bottom: 2px;
-}
-
-.header-info .en-name {
-  font-size: 15px; color: #CADCFC; margin-bottom: 6px;
-}
-
-.header-info .job-title {
-  font-size: 12px; color: #9FB8D8; font-style: italic; margin-bottom: 12px;
-}
-
-.contact-grid {
-  display: flex; flex-wrap: wrap; gap: 6px 24px;
-}
-
-.contact-item {
-  display: flex; align-items: center; gap: 6px;
-  font-size: 12px; color: #B0CCE8;
-}
-
-.contact-item svg { width: 14px; height: 14px; opacity: 0.7; }
-
-/* ===== MAIN LAYOUT ===== */
-.body { padding: 2rem 2.5rem; }
-
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
-}
+/* ===== PANELS ===== */
+.panel { display:none; padding:2rem 2.5rem; }
+.panel.active { display:block; }
 
 /* ===== SECTION ===== */
-.section { margin-bottom: 1.5rem; }
+.section { margin-bottom:1.8rem; }
+.section-title { display:flex; align-items:center; gap:10px; margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid var(--border); }
+.section-title .bar { width:4px; height:18px; border-radius:2px; background:var(--accent); flex-shrink:0; }
+.section-title span { font-size:11px; font-weight:700; color:var(--navy); letter-spacing:.12em; text-transform:uppercase; }
 
-.section-title {
-  display: flex; align-items: center; gap: 10px;
-  margin-bottom: 12px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--border);
-}
+/* ===== OVERVIEW PANEL (2-col) ===== */
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
 
-.section-title .bar {
-  width: 4px; height: 18px; border-radius: 2px;
-  background: var(--accent); flex-shrink: 0;
-}
-
-.section-title span {
-  font-size: 11px; font-weight: 700; color: var(--navy);
-  letter-spacing: 0.12em; text-transform: uppercase;
-}
-
-/* ===== INFO GRID ===== */
-.info-table { width: 100%; border-collapse: collapse; }
-.info-table td { padding: 4px 0; font-size: 12.5px; vertical-align: top; }
-.info-table .lbl { color: var(--muted); width: 120px; }
-
-/* ===== LANGUAGE BARS ===== */
-.lang-list { display: flex; flex-direction: column; gap: 8px; }
-
-.lang-row { display: flex; align-items: center; gap: 10px; }
-
-.lang-name { width: 60px; font-size: 13px; font-weight: 500; flex-shrink: 0; }
-
-.lang-bar { flex: 1; height: 7px; background: var(--border); border-radius: 4px; overflow: hidden; }
-
-.lang-fill { height: 100%; border-radius: 4px; background: var(--navy); }
-
-.lang-tag {
-  font-size: 11px; font-weight: 600; color: var(--accent); width: 80px; text-align: right;
-}
-
-/* ===== CERTS ===== */
-.cert-row {
-  display: flex; gap: 12px; padding: 5px 0;
-  border-bottom: 1px solid var(--border); font-size: 12.5px;
-}
-
-.cert-year { color: var(--muted); width: 36px; flex-shrink: 0; }
-
-/* ===== SKILL CHIPS ===== */
-.skill-group { margin-bottom: 10px; }
-.skill-group-label { font-size: 11px; color: var(--muted); font-style: italic; margin-bottom: 5px; }
-.chips { display: flex; flex-wrap: wrap; gap: 5px; }
-
-.chip {
-  font-size: 11.5px; font-weight: 600; padding: 3px 10px;
-  border-radius: 20px; line-height: 1.4;
-}
-.chip-blue  { background: var(--chip-blue-bg);  color: var(--chip-blue-txt); }
-.chip-teal  { background: var(--chip-teal-bg);  color: var(--chip-teal-txt); }
-.chip-gray  { background: var(--chip-gray-bg);  color: var(--chip-gray-txt); }
+/* ===== WORK EXP ===== */
+.job-entry { border-left:3px solid var(--accent); padding-left:16px; margin-bottom:24px; }
+.job-period { font-size:11px; font-weight:700; color:var(--accent); margin-bottom:2px; }
+.job-company-badge { display:inline-block; background:var(--chip-blue-bg); color:var(--chip-blue-txt); font-size:11px; font-weight:700; padding:2px 10px; border-radius:20px; margin-bottom:6px; }
+.job-title { font-size:14.5px; font-weight:700; margin-bottom:4px; }
+.job-company { font-size:12px; color:var(--muted); font-style:italic; margin-bottom:8px; }
+.job-bullets { list-style:none; margin-bottom:10px; }
+.job-bullets li { font-size:12.5px; color:var(--muted); padding-left:14px; position:relative; margin-bottom:4px; }
+.job-bullets li::before { content:'–'; position:absolute; left:0; color:var(--accent); }
+.achievement { display:inline-flex; align-items:center; gap:5px; background:var(--green-bg); color:var(--green-txt); font-size:12px; font-weight:700; padding:3px 10px; border-radius:5px; margin-bottom:10px; }
+.job-tags { display:flex; flex-wrap:wrap; gap:5px; }
+.job-tag { font-size:11px; font-weight:600; background:var(--chip-blue-bg); color:var(--chip-blue-txt); padding:2px 9px; border-radius:4px; }
 
 /* ===== EDUCATION ===== */
-.edu-entry { margin-bottom: 14px; }
-.edu-date { font-size: 11px; color: var(--accent); font-weight: 600; margin-bottom: 2px; }
-.edu-school { font-size: 13px; font-weight: 700; }
-.edu-major { font-size: 12px; color: var(--muted); }
+.edu-entry { margin-bottom:18px; padding-left:16px; border-left:3px solid #CBD5E1; }
+.edu-date { font-size:11px; color:var(--accent); font-weight:600; margin-bottom:2px; }
+.edu-school { font-size:13.5px; font-weight:700; }
+.edu-major { font-size:12px; color:var(--muted); }
 
-/* ===== WORK EXPERIENCE ===== */
-.job-entry {
-  border-left: 3px solid var(--accent);
-  padding-left: 14px;
-  margin-bottom: 20px;
-}
+/* ===== INFO TABLE ===== */
+.info-table { width:100%; }
+.info-table td { padding:5px 0; font-size:13px; vertical-align:top; border-bottom:1px solid var(--border); }
+.info-table .lbl { color:var(--muted); width:130px; font-size:12px; }
 
-.job-period { font-size: 11px; font-weight: 700; color: var(--accent); margin-bottom: 2px; }
-.job-title  { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
-.job-company { font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 7px; }
+/* ===== LANG BARS ===== */
+.lang-row { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+.lang-name { width:60px; font-size:13px; font-weight:500; flex-shrink:0; }
+.lang-bar { flex:1; height:8px; background:var(--border); border-radius:4px; overflow:hidden; }
+.lang-fill { height:100%; border-radius:4px; background:var(--navy); }
+.lang-tag { font-size:11px; font-weight:700; color:var(--accent); width:80px; text-align:right; }
 
-.job-bullets { list-style: none; margin-bottom: 8px; }
-.job-bullets li {
-  font-size: 12.5px; color: var(--muted);
-  padding-left: 14px; position: relative; margin-bottom: 3px;
-}
-.job-bullets li::before { content: '–'; position: absolute; left: 0; color: var(--accent); }
+/* ===== CERTS ===== */
+.cert-row { display:flex; gap:14px; padding:6px 0; border-bottom:1px solid var(--border); font-size:13px; }
+.cert-year { color:var(--muted); width:36px; flex-shrink:0; }
 
-.achievement {
-  display: inline-flex; align-items: center; gap: 5px;
-  background: var(--green-bg); color: var(--green-txt);
-  font-size: 12px; font-weight: 700;
-  padding: 3px 10px; border-radius: 5px; margin-bottom: 8px;
-}
-
-.job-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-
-.job-tag {
-  font-size: 11px; font-weight: 600;
-  background: var(--chip-blue-bg); color: var(--chip-blue-txt);
-  padding: 2px 9px; border-radius: 4px;
-}
-
-/* ===== SUMMARY ===== */
-.summary-text { font-size: 13px; line-height: 1.8; color: var(--text); }
-.summary-text strong { color: var(--navy); }
+/* ===== SKILL CHIPS ===== */
+.skill-group { margin-bottom:12px; }
+.skill-group-label { font-size:11px; color:var(--muted); font-style:italic; margin-bottom:6px; }
+.chips { display:flex; flex-wrap:wrap; gap:6px; }
+.chip { font-size:11.5px; font-weight:600; padding:4px 11px; border-radius:20px; }
+.chip-blue  { background:var(--chip-blue-bg);  color:var(--chip-blue-txt); }
+.chip-teal  { background:var(--chip-teal-bg);  color:var(--chip-teal-txt); }
+.chip-gray  { background:var(--chip-gray-bg);  color:var(--chip-gray-txt); }
 
 /* ===== SELF PR ===== */
-.pr-text { font-size: 13px; line-height: 1.8; color: var(--text); }
-.pr-text strong { color: var(--navy); }
+.pr-block { background:var(--bg); border-radius:12px; padding:1.5rem; margin-bottom:1rem; }
+.pr-block p { font-size:13px; line-height:1.85; color:var(--text); }
+.pr-block strong { color:var(--navy); }
 
-/* ===== ACHIEVEMENTS ===== */
-.badges { display: flex; flex-wrap: wrap; gap: 8px; }
-.badge {
-  display: inline-flex; align-items: center; gap: 5px;
-  background: var(--chip-teal-bg); color: var(--chip-teal-txt);
-  font-size: 12.5px; font-weight: 700;
-  padding: 5px 12px; border-radius: 6px;
-}
+/* ===== BADGES ===== */
+.badges { display:flex; flex-wrap:wrap; gap:8px; }
+.badge { display:inline-flex; align-items:center; gap:5px; background:var(--chip-teal-bg); color:var(--chip-teal-txt); font-size:12.5px; font-weight:700; padding:6px 14px; border-radius:8px; }
 
-/* ===== FOOTER ===== */
-footer {
-  background: var(--navy);
-  color: #CADCFC;
-  font-size: 11px;
-  text-align: center;
-  padding: 10px;
-}
+/* ===== TIMELINE ===== */
+.timeline { position:relative; padding-left:28px; }
+.timeline::before { content:''; position:absolute; left:7px; top:8px; bottom:0; width:2px; background:var(--border); }
+.tl-item { position:relative; margin-bottom:20px; }
+.tl-item::before { content:''; position:absolute; left:-24px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--accent); border:2px solid #fff; box-shadow:0 0 0 2px var(--accent); }
+.tl-date { font-size:11px; font-weight:700; color:var(--accent); margin-bottom:2px; }
+.tl-title { font-size:13.5px; font-weight:700; }
+.tl-sub { font-size:12px; color:var(--muted); }
 
-@media (max-width: 640px) {
-  .two-col { grid-template-columns: 1fr; gap: 0; }
-  .header { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.5rem; }
-  .body { padding: 1.25rem 1rem; }
-}
+footer { background:var(--navy); color:#CADCFC; font-size:11px; text-align:center; padding:12px; }
 
-@media print {
-  body { background: #fff; }
-  .page { box-shadow: none; border-radius: 0; margin: 0; }
+@media (max-width:640px) {
+  .two-col { grid-template-columns:1fr; }
+  .header { flex-direction:column; align-items:flex-start; gap:1rem; padding:1.5rem; }
+  .panel { padding:1.25rem 1rem; }
+  .nav-tab { font-size:11px; padding:.6rem .2rem; }
 }
 </style>
 </head>
@@ -248,7 +137,7 @@ footer {
     <div class="header-info">
       <h1>呉 持尊</h1>
       <div class="en-name">Wu Chizun</div>
-      <div class="job-title">Production Engineer &nbsp;·&nbsp; Web Developer</div>
+      <div class="job-title">AMHS Software Engineer &nbsp;·&nbsp; Web Developer</div>
       <div class="contact-grid">
         <span class="contact-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.85 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.77 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -260,7 +149,7 @@ footer {
         </span>
         <span class="contact-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          茨城県ひたちなか市
+          熊本県菊池郡菊陽町
         </span>
         <span class="contact-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -270,110 +159,37 @@ footer {
     </div>
   </header>
 
-  <div class="body">
+  <!-- NAV TABS -->
+  <nav class="nav">
+    <div class="nav-tab active" data-tab="overview">📋 概要</div>
+    <div class="nav-tab" data-tab="work">💼 職務経歴</div>
+    <div class="nav-tab" data-tab="education">🎓 学歴</div>
+    <div class="nav-tab" data-tab="profile">👤 自己PR</div>
+  </nav>
 
+  <!-- ===== PANEL: OVERVIEW ===== -->
+  <div class="panel active" id="panel-overview">
     <div class="two-col">
-
-      <!-- LEFT -->
       <div>
-
-        <!-- CAREER SUMMARY -->
-        <div class="section">
-          <div class="section-title"><div class="bar"></div><span>職歴要約　Career Summary</span></div>
-          <p class="summary-text">
-            <strong>工機ホールディングス（HiKOKI）</strong>に新卒入社。製造現場での研修後、IoTデータ分析・改善提案を担当。その後、生産管理課に異動し、<strong>倉庫管理システムの開発</strong>（PHP / JavaScript / PostgreSQL）および日程表作成業務の効率化を推進。ユーザーヒアリングから設計・開発・保守まで一貫して担当。
-            <br><br>
-            Joined HiKOKI fresh out of university. After on-site manufacturing training, moved into IoT data analysis and process improvement, then led warehouse management system development and scheduling optimization.
-          </p>
-        </div>
-
-        <!-- WORK EXPERIENCE -->
-        <div class="section">
-          <div class="section-title"><div class="bar"></div><span>職務経歴　Work Experience</span></div>
-
-          <div class="job-entry">
-            <div class="job-period">2021.01 – 現在 (Present)</div>
-            <div class="job-title">倉庫管理システム開発　WMS Developer</div>
-            <div class="job-company">工機ホールディングス (HiKOKI) — 生産技術部 生産管理課</div>
-            <ul class="job-bullets">
-              <li>ユーザーヒアリングによる要件定義・仕様策定・改修 / Requirements gathering via user interviews</li>
-              <li>PHP・JSによるフルスタック開発とセキュリティ向上 / Full-stack development with PHP & JS</li>
-              <li>開発ルール標準化・チームメンバーへのフォロー / Standardized dev rules; mentored team</li>
-            </ul>
-            <div class="achievement">▲ コード可読性・保守性を大幅向上</div>
-            <div class="job-tags">
-              <span class="job-tag">PHP</span><span class="job-tag">JavaScript</span>
-              <span class="job-tag">HTML/CSS</span><span class="job-tag">PostgreSQL</span>
-            </div>
-          </div>
-
-          <div class="job-entry">
-            <div class="job-period">2020.05 – 現在 (Present)</div>
-            <div class="job-title">日程表作成サポート　Scheduling Support</div>
-            <div class="job-company">工機ホールディングス (HiKOKI) — 生産技術部 生産管理課</div>
-            <ul class="job-bullets">
-              <li>データマスター更新と先行作成により調整時間 −20% / −20% scheduling time via advance planning</li>
-              <li>Teams活用で情報共有・分担最適化し工数平均 −20% / −20% man-hours via Teams collaboration</li>
-            </ul>
-            <div class="achievement">▲ 工数平均 20% 削減</div>
-            <div class="job-tags">
-              <span class="job-tag">Visual Basic</span><span class="job-tag">Oracle</span><span class="job-tag">MS Teams</span>
-            </div>
-          </div>
-
-          <div class="job-entry">
-            <div class="job-period">2019.10 – 2020.04</div>
-            <div class="job-title">IoTデータ分析と改善　IoT Analysis</div>
-            <div class="job-company">工機ホールディングス (HiKOKI) — 製造部</div>
-            <ul class="job-bullets">
-              <li>加工研修で製造工程を習得 / Hands-on manufacturing process training</li>
-              <li>パラメータ再設定とインターフェース改修で計測精度 最大 +27% / Up to +27% measurement accuracy</li>
-            </ul>
-            <div class="achievement">▲ 計測精度 最大 +27%</div>
-            <div class="job-tags">
-              <span class="job-tag">Excel</span><span class="job-tag">PowerPoint</span><span class="job-tag">IoT</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- RIGHT -->
-      <div>
-
-        <!-- PERSONAL INFO -->
+        <!-- PERSONAL -->
         <div class="section">
           <div class="section-title"><div class="bar"></div><span>基本情報　Personal Info</span></div>
           <table class="info-table">
-            <tr><td class="lbl">国籍 / Nationality</td><td>台湾 / Taiwan</td></tr>
-            <tr><td class="lbl">住所 / Address</td><td>熊本県菊池郡菊陽町</td></tr>
-            <tr><td class="lbl">配偶者 / Marital</td><td>無 / None</td></tr>
+            <tr><td class="lbl">国籍</td><td>台湾 / Taiwan</td></tr>
+            <tr><td class="lbl">住所</td><td>熊本県菊池郡菊陽町</td></tr>
+            <tr><td class="lbl">語学</td><td>中国語・日本語・英語</td></tr>
           </table>
         </div>
 
         <!-- LANGUAGES -->
         <div class="section">
           <div class="section-title"><div class="bar"></div><span>語学　Languages</span></div>
-          <div class="lang-list">
-            <div class="lang-row">
-              <span class="lang-name">中国語</span>
-              <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
-              <span class="lang-tag">Native</span>
-            </div>
-            <div class="lang-row">
-              <span class="lang-name">日本語</span>
-              <div class="lang-bar"><div class="lang-fill" style="width:88%"></div></div>
-              <span class="lang-tag">JLPT N1</span>
-            </div>
-            <div class="lang-row">
-              <span class="lang-name">English</span>
-              <div class="lang-bar"><div class="lang-fill" style="width:72%"></div></div>
-              <span class="lang-tag">TOEIC 825</span>
-            </div>
-          </div>
+          <div class="lang-row"><span class="lang-name">中国語</span><div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div><span class="lang-tag">Native</span></div>
+          <div class="lang-row"><span class="lang-name">日本語</span><div class="lang-bar"><div class="lang-fill" style="width:88%"></div></div><span class="lang-tag">JLPT N1</span></div>
+          <div class="lang-row"><span class="lang-name">English</span><div class="lang-bar"><div class="lang-fill" style="width:72%"></div></div><span class="lang-tag">TOEIC 825</span></div>
         </div>
 
-        <!-- CERTIFICATIONS -->
+        <!-- CERTS -->
         <div class="section">
           <div class="section-title"><div class="bar"></div><span>資格　Certifications</span></div>
           <div class="cert-row"><span class="cert-year">2013</span><span>普通自動車第一種免許</span></div>
@@ -381,90 +197,219 @@ footer {
           <div class="cert-row"><span class="cert-year">2021</span><span>簿記検定 3級</span></div>
           <div class="cert-row"><span class="cert-year">2023</span><span>TOEIC 825点</span></div>
         </div>
+      </div>
 
-        <!-- KEY SKILLS -->
+      <div>
+        <!-- SKILLS -->
         <div class="section">
           <div class="section-title"><div class="bar"></div><span>スキル　Key Skills</span></div>
           <div class="skill-group">
             <div class="skill-group-label">Programming</div>
-            <div class="chips">
-              <span class="chip chip-blue">PHP</span>
-              <span class="chip chip-blue">JavaScript</span>
-              <span class="chip chip-blue">HTML/CSS</span>
-              <span class="chip chip-blue">Visual Basic</span>
-            </div>
+            <div class="chips"><span class="chip chip-blue">PHP</span><span class="chip chip-blue">JavaScript</span><span class="chip chip-blue">HTML/CSS</span><span class="chip chip-blue">Visual Basic</span></div>
           </div>
           <div class="skill-group">
             <div class="skill-group-label">Database</div>
-            <div class="chips">
-              <span class="chip chip-teal">PostgreSQL</span>
-              <span class="chip chip-teal">Oracle</span>
-            </div>
+            <div class="chips"><span class="chip chip-teal">PostgreSQL</span><span class="chip chip-teal">Oracle SQL</span></div>
           </div>
           <div class="skill-group">
-            <div class="skill-group-label">Tools</div>
-            <div class="chips">
-              <span class="chip chip-gray">Excel</span>
-              <span class="chip chip-gray">Word</span>
-              <span class="chip chip-gray">PowerPoint</span>
-              <span class="chip chip-gray">Teams</span>
-              <span class="chip chip-gray">IoT分析</span>
-            </div>
+            <div class="skill-group-label">Tools &amp; Domain</div>
+            <div class="chips"><span class="chip chip-gray">Excel</span><span class="chip chip-gray">PowerPoint</span><span class="chip chip-gray">Teams</span><span class="chip chip-gray">AMHS</span><span class="chip chip-gray">IoT分析</span><span class="chip chip-gray">KPI管理</span></div>
           </div>
         </div>
 
-        <!-- EDUCATION -->
+        <!-- ACHIEVEMENTS -->
         <div class="section">
-          <div class="section-title"><div class="bar"></div><span>学歴　Education</span></div>
-
-          <div class="edu-entry">
-            <div class="edu-date">2017.09 修了</div>
-            <div class="edu-school">国立陽明交通大学（台湾）大学院</div>
-            <div class="edu-major">工業技術管理専攻 修士課程<br>Master's in Industrial Technology Management</div>
-          </div>
-          <div class="edu-entry">
-            <div class="edu-date">2016.09 – 2017.07</div>
-            <div class="edu-school">近畿大学（日本）交換留学</div>
-            <div class="edu-major">経営学部 商学研究科<br>Exchange Student, Faculty of Business</div>
-          </div>
-          <div class="edu-entry">
-            <div class="edu-date">2014.06 卒業</div>
-            <div class="edu-school">国立陽明交通大学（台湾）</div>
-            <div class="edu-major">工業技術管理学科 学士<br>Bachelor's in Industrial Technology Management</div>
+          <div class="section-title"><div class="bar"></div><span>主な実績　Achievements</span></div>
+          <div class="badges">
+            <span class="badge">📉 日程調整時間 −20%</span>
+            <span class="badge">📉 工数削減 −20%</span>
+            <span class="badge">📈 IoT精度 +27%</span>
+            <span class="badge">🏭 WMS開発</span>
+            <span class="badge">🏆 TOEIC 825</span>
+            <span class="badge">🏆 JLPT N1</span>
           </div>
         </div>
-
       </div>
     </div>
+  </div>
 
-    <!-- ACHIEVEMENTS -->
+  <!-- ===== PANEL: WORK EXPERIENCE ===== -->
+  <div class="panel" id="panel-work">
     <div class="section">
-      <div class="section-title"><div class="bar"></div><span>主な実績　Key Achievements</span></div>
-      <div class="badges">
-        <span class="badge">📉 日程調整時間 −20%</span>
-        <span class="badge">📉 工数削減 平均 −20%</span>
-        <span class="badge">📈 IoT計測精度 +27%</span>
-        <span class="badge">💻 WMS開発 (PHP/JS/PostgreSQL)</span>
-        <span class="badge">🏆 TOEIC 825</span>
-        <span class="badge">🏆 JLPT N1</span>
+      <div class="section-title"><div class="bar"></div><span>職務経歴　Work Experience</span></div>
+
+      <div class="job-entry">
+        <div class="job-period">2024.07 – 現在 (Present)</div>
+        <span class="job-company-badge">JASM — 現職</span>
+        <div class="job-title">AMHSソフトウェアエンジニア　AMHS Software Engineer</div>
+        <div class="job-company">Japan Advanced Semiconductor Manufacturing (JASM) — 熊本</div>
+        <ul class="job-bullets">
+          <li>搬送システムのKPI管理・異常対応・パラメータ調整 / Keep transfer KPI within Spec</li>
+          <li>システム設定の安定化・障害対応・設定最適化 / System stabilization and setting management</li>
+          <li>当直メンバーの管理・シフト調整 / On-duty member management</li>
+          <li>本社・各部署と連携し設定変更・バージョンアップを推進 / Collaborate with HQ and departments for upgrades</li>
+        </ul>
+        <div class="achievement">▲ 稼働安定性の維持・KPI 達成</div>
+        <div class="job-tags"><span class="job-tag">Oracle SQL</span><span class="job-tag">AMHS</span><span class="job-tag">KPI管理</span><span class="job-tag">設定管理</span></div>
+      </div>
+
+      <div class="job-entry">
+        <div class="job-period">2021.01 – 2024.06</div>
+        <span class="job-company-badge">HiKOKI — 生産技術部</span>
+        <div class="job-title">倉庫管理システム開発　WMS Developer</div>
+        <div class="job-company">工機ホールディングス株式会社 (HiKOKI) — 生産技術部 生産管理課</div>
+        <ul class="job-bullets">
+          <li>ユーザーヒアリングによる要件定義・仕様策定・改修 / Requirements gathering via user interviews</li>
+          <li>PHP・JSによるフルスタック開発とセキュリティ向上 / Full-stack development with PHP & JS</li>
+          <li>開発ルール標準化・チームメンバーへのフォロー / Standardized dev rules; mentored team</li>
+        </ul>
+        <div class="achievement">▲ コード可読性・保守性を大幅向上</div>
+        <div class="job-tags"><span class="job-tag">PHP</span><span class="job-tag">JavaScript</span><span class="job-tag">HTML/CSS</span><span class="job-tag">PostgreSQL</span></div>
+      </div>
+
+      <div class="job-entry">
+        <div class="job-period">2020.05 – 2024.06</div>
+        <span class="job-company-badge">HiKOKI — 生産技術部</span>
+        <div class="job-title">日程表作成サポート　Scheduling Support</div>
+        <div class="job-company">工機ホールディングス株式会社 (HiKOKI) — 生産技術部 生産管理課</div>
+        <ul class="job-bullets">
+          <li>データマスター更新と先行作成で調整時間 −20% / −20% scheduling time via advance planning</li>
+          <li>Teams活用で情報共有・分担最適化し工数平均 −20% / −20% man-hours via Teams collaboration</li>
+        </ul>
+        <div class="achievement">▲ 工数平均 20% 削減</div>
+        <div class="job-tags"><span class="job-tag">Visual Basic</span><span class="job-tag">Oracle</span><span class="job-tag">MS Teams</span></div>
+      </div>
+
+      <div class="job-entry">
+        <div class="job-period">2019.10 – 2020.04</div>
+        <span class="job-company-badge">HiKOKI — 製造部</span>
+        <div class="job-title">IoTデータ分析と改善　IoT Data Analysis</div>
+        <div class="job-company">工機ホールディングス株式会社 (HiKOKI) — 製造部</div>
+        <ul class="job-bullets">
+          <li>加工研修で製造工程を習得 / Hands-on manufacturing process training</li>
+          <li>パラメータ再設定とインターフェース改修で計測精度 最大 +27% / Up to +27% measurement accuracy</li>
+        </ul>
+        <div class="achievement">▲ 計測精度 最大 +27%</div>
+        <div class="job-tags"><span class="job-tag">Excel</span><span class="job-tag">PowerPoint</span><span class="job-tag">IoT</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PANEL: EDUCATION ===== -->
+  <div class="panel" id="panel-education">
+
+    <div class="section">
+      <div class="section-title"><div class="bar"></div><span>学歴　Academic Background</span></div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-date">2014.09 – 2017.09</div>
+          <div class="tl-title">国立陽明交通大学 大学院（台湾）</div>
+          <div class="tl-sub">工業技術管理専攻 修士課程 修了<br>Master's in Industrial Technology Management</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2016.09 – 2017.07</div>
+          <div class="tl-title">近畿大学（日本）交換留学</div>
+          <div class="tl-sub">経営学部 商学研究科<br>Exchange Student, Faculty of Business</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2010.09 – 2014.06</div>
+          <div class="tl-title">国立陽明交通大学（台湾）</div>
+          <div class="tl-sub">工業技術管理学科 学士 卒業<br>Bachelor's in Industrial Technology Management</div>
+        </div>
       </div>
     </div>
 
-    <!-- SELF PR -->
+    <div class="section">
+      <div class="section-title"><div class="bar"></div><span>職歴タイムライン　Career Timeline</span></div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-date">2024.07 – 現在</div>
+          <div class="tl-title">JASM — AMHSソフトウェアエンジニア</div>
+          <div class="tl-sub">Japan Advanced Semiconductor Manufacturing（熊本）</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2021.01 – 2024.06</div>
+          <div class="tl-title">工機ホールディングス — 倉庫管理システム開発</div>
+          <div class="tl-sub">生産技術部 生産管理課（PHP / JS / PostgreSQL）</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2020.05 – 2024.06</div>
+          <div class="tl-title">工機ホールディングス — 日程表作成サポート</div>
+          <div class="tl-sub">生産技術部 生産管理課（Visual Basic / Oracle）</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2019.10 – 2020.04</div>
+          <div class="tl-title">工機ホールディングス — IoTデータ分析</div>
+          <div class="tl-sub">製造部（製造現場研修 + IoT精度改善）</div>
+        </div>
+        <div class="tl-item" style="--accent:#CBD5E1">
+          <div class="tl-date">2017.11 – 2018.12</div>
+          <div class="tl-title">代替役（兵役義務）台湾</div>
+          <div class="tl-sub">Alternative Military Service</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="bar"></div><span>資格一覧　Certifications</span></div>
+      <div class="cert-row"><span class="cert-year">2013</span><span>普通自動車第一種免許</span></div>
+      <div class="cert-row"><span class="cert-year">2018</span><span>JLPT N1（日本語能力試験 1級）</span></div>
+      <div class="cert-row"><span class="cert-year">2021</span><span>簿記検定 3級</span></div>
+      <div class="cert-row"><span class="cert-year">2023</span><span>TOEIC 825点</span></div>
+    </div>
+  </div>
+
+  <!-- ===== PANEL: SELF PR ===== -->
+  <div class="panel" id="panel-profile">
     <div class="section">
       <div class="section-title"><div class="bar"></div><span>自己PR　Self Appeal</span></div>
-      <p class="pr-text">
-        <strong>継続的な成長</strong>への強い意欲を持ち、開発プロジェクトでは保守性の高い設計を実践。コード品質・セキュリティ向上でチームから高い評価を獲得。生産サポートでは他部門と協力しオペレーションマニュアルを整備し、ヒューマンエラー抑制にも貢献。<strong>多言語対応力</strong>（中国語ネイティブ・日本語N1・TOEIC 825）を活かし、国際的な環境でも積極的に貢献できます。
-        <br><br>
-        Driven by a strong commitment to continuous growth, I prioritize maintainable design in development projects and have earned recognition for improving code quality and security. My multilingual proficiency — native Chinese, business-level Japanese (JLPT N1), and English (TOEIC 825) — enables me to thrive in international environments.
-      </p>
-    </div>
 
+      <div class="pr-block">
+        <p>
+          <strong>継続的な成長への意欲</strong><br>
+          常に成長への強い意欲を持ち、オンライン学習や資格取得を通じてスキルアップに努めています。開発プロジェクトでは既存仕様を深く理解した上で保守性の高い設計を実践し、ソースコードの可読性・セキュリティ向上でチームから高い評価を得ました。
+        </p>
+      </div>
+
+      <div class="pr-block">
+        <p>
+          <strong>実務での成果</strong><br>
+          生産管理課では他部門と協力してオペレーションマニュアルを整備し、データマスターの定期更新により日程調整時間を約20%削減。Teamsを活用した業務分担最適化で工数も平均20%削減を実現しました。製造現場では、加工機械のパラメータ再設定によりIoT計測精度を最大27%向上させた実績があります。
+        </p>
+      </div>
+
+      <div class="pr-block">
+        <p>
+          <strong>多言語対応力</strong><br>
+          中国語（ネイティブ）・日本語（JLPT N1・ビジネスレベル）・英語（TOEIC 825）の3言語を活かし、国際的な環境でも積極的にコミュニケーションを取ることができます。現職JASMでは本社（海外）との英語連絡対応も担当しています。
+        </p>
+      </div>
+
+      <div class="pr-block">
+        <p>
+          <strong>Commitment to Continuous Growth</strong><br>
+          Driven by a strong commitment to growth, I actively pursue skill development through online courses and certifications. In development projects, I prioritize maintainability and have earned recognition for improving code quality and security. My multilingual proficiency — native Chinese, business-level Japanese (JLPT N1), and English (TOEIC 825) — enables me to thrive in international environments such as JASM.
+        </p>
+      </div>
+    </div>
   </div>
 
   <footer>
     Wu Chizun &nbsp;·&nbsp; 呉 持尊 &nbsp;·&nbsp; pp131413@gmail.com &nbsp;·&nbsp; 080-8731-5772
   </footer>
 </div>
+
+<script>
+document.querySelectorAll('.nav-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.tab;
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-' + target).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+</script>
 </body>
 </html>
