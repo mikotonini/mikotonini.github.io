@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Wu Chizun / 呉持尊 — Resume</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="style.css?v=1.1">
@@ -27,6 +28,9 @@ body{font-family:'Noto Sans JP','Noto Sans',sans-serif;background:var(--bg);colo
 .lang-btn{font-size:11.5px;font-weight:700;padding:4px 12px;border-radius:20px;border:1.5px solid rgba(202,220,252,.3);background:transparent;color:#9FB8D8;cursor:pointer;transition:all .2s;letter-spacing:.04em}
 .lang-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
 .lang-btn:hover:not(.active){background:rgba(255,255,255,.08);color:#CADCFC}
+.dl-btn{display:flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;padding:4px 12px;border-radius:20px;border:1.5px solid var(--accent);background:var(--accent);color:#fff;cursor:pointer;text-decoration:none;letter-spacing:.04em;margin-left:10px;transition:all .2s}
+.dl-btn:hover{background:#1a7f8e;border-color:#1a7f8e}
+.dl-btn svg{width:13px;height:13px;flex-shrink:0}
 
 /* ── HEADER ── */
 .header{background:var(--navy);padding:1.8rem 2.5rem;display:flex;align-items:center;gap:2rem}
@@ -142,6 +146,12 @@ footer{background:var(--navy);color:#CADCFC;font-size:11px;text-align:center;pad
   <button class="lang-btn active" onclick="setLang('ja')">日本語</button>
   <button class="lang-btn" onclick="setLang('en')">English</button>
   <button class="lang-btn" onclick="setLang('zh')">中文</button>
+  <a class="dl-btn" href="https://mikotonini.github.io/image/resume_go_chison_ver5.pdf" download="WUCHIZUN_resume.pdf" >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download CV
+  </a>
+  
+  
 </div>
 
 <!-- HEADER -->
