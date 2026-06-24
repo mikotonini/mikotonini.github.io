@@ -216,10 +216,6 @@ footer{background:var(--navy);color:#CADCFC;font-size:11px;text-align:center;pad
     <div class="sec-title"><div class="bar"></div><span id="ed-title"></span></div>
     <div class="timeline" id="ed-list"></div>
   </div>
-  <div class="section">
-    <div class="sec-title"><div class="bar"></div><span id="ed-career-title"></span></div>
-    <div class="timeline" id="ed-career"></div>
-  </div>
 </div>
 
 <!-- PANEL: PROFILE -->
@@ -290,7 +286,7 @@ const DATA = {
     prs:[
       {h:"継続的な成長への意欲",b:"常に成長への強い意欲を持ち、オンライン学習や資格取得でスキルアップを継続。開発PJでは既存仕様を深く理解した上で保守性の高い設計を実践し、コード品質・セキュリティ向上でチームから高評価を獲得。"},
       {h:"実務での成果",b:"日程調整時間とチーム工数をそれぞれ約20%削減。IoT計測精度を最大27%向上。WMS開発ではフロントエンドからDB設計まで一貫して担当し、開発ルールを標準化してチームの保守効率を向上。"},
-      {h:"多言語対応力・国際環境",b:"中国語（ネイティブ）・日本語（JLPT N1）・英語（TOEIC 825）の3言語を駆使。現職JASMでは本社（海外）との英語連絡を担当し、多国籍チームとの協働経験あり。"},
+      {h:"多言語対応力・国際環境",b:"中国語（ネイティブ）・日本語（JLPT N1）・英語（TOEIC 825）の3言語を駆使。現職JASMでは本社との連絡を担当し、多国籍チームとの協働経験あり。"},
     ],
   },
   en:{
@@ -345,7 +341,7 @@ const DATA = {
     prs:[
       {h:"Drive for Continuous Growth",b:"Committed to lifelong learning through online courses and certifications. In development projects, I implement maintainable designs grounded in a deep understanding of existing specs, earning team recognition for improving code quality and security."},
       {h:"Quantifiable Impact",b:"Reduced scheduling adjustment time and team man-hours each by ~20%. Boosted IoT measurement accuracy by up to 27%. Delivered end-to-end WMS development—from front-end to database design—and standardized dev rules to raise team efficiency."},
-      {h:"Multilingual & Cross-Cultural",b:"Native Chinese, business-level Japanese (JLPT N1), and English (TOEIC 825). At JASM, I handle direct English communication with overseas HQ and collaborate daily with a multinational engineering team."},
+      {h:"Multilingual & Cross-Cultural",b:"Native Chinese, business-level Japanese (JLPT N1), and English (TOEIC 825). At JASM, I handle direct communication with overseas HQ and collaborate daily with a multinational engineering team."},
     ],
   },
   zh:{
@@ -398,9 +394,9 @@ const DATA = {
     ],
     pr_title:"自我介紹  SELF APPEAL",
     prs:[
-      {h:"持續成長的熱情",b:"對成長充滿熱情，透過線上學習與取得證照持續精進技能。在開發專案中深入理解現有規格後實踐高維護性設計，因提升程式碼品質與安全性而獲得團隊高度評價。"},
+      {h:"持續成長的熱情",b:"積極與持續學習，透過線上學習與取得證照持續精進技能。在開發專案中深入理解現有規格後實踐高維護性設計，因提升程式碼品質與安全性而獲得團隊高度評價。"},
       {h:"具體的工作成果",b:"排程調整時間與團隊工時各削減約20%。IoT計測精度最高提升27%。WMS開發從前端到資料庫設計一手包辦，並標準化開發規範以提升團隊維護效率。"},
-      {h:"多語言・國際環境",b:"中文（母語）・日文（JLPT N1・商務程度）・英文（TOEIC 825）三語並用。現職JASM負責與海外總部的英文溝通聯絡，具跨國團隊協作經驗。"},
+      {h:"多語言・國際環境",b:"中文（母語）・日文（JLPT N1・商務程度）・英文（TOEIC 825）三語並用。現職JASM負責與總部的溝通聯絡，具跨國團隊協作經驗。"},
     ],
   },
 };
@@ -472,13 +468,6 @@ function render(lang){
       <div class="tl-date">${e.date}</div>
       <div class="tl-title">${e.school}</div>
       <div class="tl-sub">${e.major}</div>
-    </div>`).join(''));
-  i('ed-career-title',D.career_title);
-  i('ed-career',D.career.map(c=>`
-    <div class="tl-item">
-      <div class="tl-date">${c.date}</div>
-      <div class="tl-title">${c.title}</div>
-      <div class="tl-sub">${c.sub}</div>
     </div>`).join(''));
 
   // PR
